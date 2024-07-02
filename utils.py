@@ -42,7 +42,7 @@ def generate_together(
                     "messages": messages,
                 },
                 headers={
-                    "Authorization": f"Bearer {os.environ.get('TOGETHER_API_KEY')}",
+                    "Authorization": f"Bearer {os.environ.get('GROQ_API_KEY')}",
                 },
             )
             if "error" in res.json():
@@ -83,7 +83,7 @@ def generate_together_stream(
 ):
     endpoint = "https://api.groq.com/openai/v1"
     client = openai.OpenAI(
-        api_key=os.environ.get("TOGETHER_API_KEY"), base_url=endpoint
+        api_key=os.environ.get("GROQ_API_KEY"), base_url=endpoint
     )
     endpoint = "https://api.groq.com/openai/v1/chat/completions"
     response = client.chat.completions.create(

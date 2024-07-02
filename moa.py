@@ -3,8 +3,8 @@ import asyncio
 import os
 from together import AsyncTogether, Together
 
-client = Together(api_key=os.environ.get("TOGETHER_API_KEY"))
-async_client = AsyncTogether(api_key=os.environ.get("TOGETHER_API_KEY"))
+client = Together(api_key=os.environ.get("GROQ_API_KEY"))
+async_client = AsyncTogether(api_key=os.environ.get("GROQ_API_KEY"))
 
 user_prompt = "What are some fun things to do in SF?"
 reference_models = [

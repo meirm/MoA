@@ -195,8 +195,9 @@ def main(
 
         for chunk in output:
             out = chunk.choices[0].delta.content
-            console.print(out, end="")
-            all_output += out
+            if out is not None:
+                console.print(out, end="")
+                all_output += out
         print()
 
         if DEBUG:
